@@ -1,0 +1,165 @@
+/* ===============================
+   APP LAYOUT
+================================ */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  width: 240px;
+  padding: 20px;
+  color: #ffffff;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #5a3e2b, #4b3621);
+  transition: transform 0.3s ease;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.sidebar img {
+  height: 48px;
+  object-fit: contain;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar nav a {
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #f3eadf;
+  font-size: 15px;
+}
+
+.sidebar nav a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ACTIVE LINK (WHITE PILL) */
+.sidebar nav a.active {
+  background: #ffffff;
+  color: #5a3e2b;
+  font-weight: 600;
+}
+
+/* ===============================
+   MAIN WRAPPER
+================================ */
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: transparent;
+}
+
+.menu-btn {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+
+.main {
+  flex: 1;
+  padding: 24px;
+  background: #f6f0e2;
+  min-width: 0;
+}
+
+/* ===============================
+   OVERLAY
+================================ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 900;
+}
+
+.sidebar.show ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .main {
+    height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Lock background when sidebar open */
+body.sidebar-open {
+  overflow: hidden;
+}

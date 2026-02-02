@@ -1,0 +1,181 @@
+/* ===============================
+   LIGHT THEME (DEFAULT)
+================================ */
+
+:root {
+  --bg-main: #f6f0e2;
+  --bg-card: #fff7e6;
+
+  --text-main: #3b2f25;
+  --text-muted: #8b7c6a;
+
+  --border-light: #e5dccf;
+
+  --primary: #5a3e2b;
+  --danger: #7a2e2e;
+}
+
+/* ===============================
+   BASE BODY
+================================ */
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===============================
+   DARK MODE VARIABLES
+================================ */
+
+body.dark {
+  --bg-main: #1e1e1e;
+  --bg-card: #2a2a2a;
+
+  --text-main: #f3f3f3;
+  --text-muted: #b5b5b5;
+
+  --border-light: #3a3a3a;
+
+  --primary: #9c6b3d;
+  --danger: #b91c1c;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  background: linear-gradient(180deg, #5a3e2b, #4b3621);
+}
+
+body.dark .sidebar {
+  background: linear-gradient(180deg, #3a2a1d, #2a1e14);
+}
+
+/* ===============================
+   MAIN AREA
+================================ */
+
+.main {
+  background: var(--bg-main);
+}
+
+/* ===============================
+   CARDS & PANELS
+================================ */
+
+.card,
+.panel {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ===== LIGHT MODE TEXT ===== */
+
+.card h2 {
+  color: var(--text-main);
+}
+
+.card p,
+.card span {
+  color: var(--text-muted);
+}
+
+.card li {
+  color: var(--text-main);
+}
+
+/* ===== DARK MODE TEXT FIX (🔥 IMPORTANT) ===== */
+
+body.dark .card h2 {
+  color: var(--text-main);
+}
+
+body.dark .card p,
+body.dark .card span {
+  color: var(--text-muted);
+}
+
+body.dark .card li {
+  color: var(--text-main);
+}
+
+/* ===============================
+   TABLES
+================================ */
+
+table {
+  background: transparent;
+}
+
+th {
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-light);
+}
+
+td {
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ===== DARK TABLE TEXT ===== */
+
+body.dark th {
+  color: var(--text-muted);
+}
+
+body.dark td {
+  color: var(--text-main);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.btn,
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+}
+
+.btn.danger {
+  background: var(--danger);
+}
+
+/* ===============================
+   INPUTS & FORMS
+================================ */
+
+input,
+select,
+textarea {
+  background: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background: #1e1e1e;
+  color: var(--text-main);
+  border-color: var(--border-light);
+}
+
+/* ===============================
+   HEADER
+================================ */
+
+.header {
+  color: var(--text-main);
+}
+
+body.dark .header {
+  color: var(--text-main);
+}
