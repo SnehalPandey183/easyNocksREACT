@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 
 import Dashboard from "./pages/Dashboard";
@@ -12,7 +12,7 @@ import Notifications from "./pages/Notifications";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/* Layout wrapper */}
         <Route element={<Layout />}>
@@ -29,6 +29,6 @@ export default function App() {
           <Route path="notifications" element={<Notifications />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
